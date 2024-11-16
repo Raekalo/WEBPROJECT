@@ -6,39 +6,32 @@
 ::-webkit-scrollbar {
     width: 8px;
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: rgb(0, 0, 0,0.2);
     border-radius: 10px; 
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
-
 ::-webkit-scrollbar-track {
     background-color: transparent;
 }
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
 header {
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 main{
-background: rgb(206, 205, 205);
+background: rgb(219, 213, 213);
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 #Logo {
         height: 75px;
         width: auto;
@@ -47,7 +40,6 @@ nav {
         cursor: pointer;
         border-radius: 50% ;
 }
-
 nav ul {
     list-style: none;
     display: flex;
@@ -56,7 +48,6 @@ nav ul {
 nav ul li {
     margin: 0 10px;
 }
-
 nav ul li a {
     text-decoration: none;
     color: #333;
@@ -83,7 +74,6 @@ nav ul li a {
 .btn:hover {
     background: rgb(100, 2, 2);
 }
-
 .SmallSizeNav{
     display: none;
     list-style: none;
@@ -202,6 +192,11 @@ footer #Logo{
     .Nav{
         display: none;
     }
+    .arrow {
+        display: block;
+        margin-right: 10px;
+    }
+
     .footer-container {
         flex-direction: column;
         align-items: center;

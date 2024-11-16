@@ -1,0 +1,128 @@
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e8ed;
+   
+}
+.container {
+    overflow: scroll;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.left-panel {
+    flex: 1;
+    background-color: rgb(46, 76, 89,0.2);
+    background-image: url(images/SignInImages/FlagRaised.PNG);
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-image 0.5s;
+}
+
+.left-panel .illustration img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Right Panel */
+.right-panel {
+    flex: 1;
+    background-color:#8e9dab;
+    position: relative;
+    padding: 50px;
+}
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hidden {
+    display: none;
+}
+.form-container h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+.form-container form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e4c59;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.form-container form button:hover {
+    background-color: #123344;
+}
+
+.form-container p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.form-container p a {
+    color: #2e4c59;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width:768px) {
+    .left-panel{
+        background-position-y:0 ;
+        background-size: cover;
+        background-image: url(images/SignInImages/FlagRaisedWide.jfif);
+    }
+    #signup-form{
+        width: 100vw;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .form-container form input {
+        margin: 2px 0;
+    }
+    .form-container p {
+        margin-top: 0px;
+    }
+    .form-container form button {
+        margin-top: 2px;
+    }
+    .form-container h3 {
+        margin-bottom: 0px;
+    }
+}
