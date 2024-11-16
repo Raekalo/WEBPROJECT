@@ -1,0 +1,107 @@
+.center {
+    background: url('images/HomeImages/Al-Aqsa.jfif') no-repeat center center/cover;
+    height: 400px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.center::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.CenterText {
+    z-index: 1;
+}
+
+.center h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.center p {
+    font-size: 1.2rem;
+}
+#content {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.MainText h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.CardsContainer{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    text-align: center;
+}
+.card{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card:nth-child(odd){
+    flex-direction: row;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+.CardImage{
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    background-size: cover;
+}
+#img1{
+    background-image: url(images/HomeImages/Rebellion.jfif);
+}
+#img2{
+    background-image: url(images/HomeImages/Al-Aqsa.jfif)
+}
+#img3{
+    background-image: url(images/HomeImages/OliveTree.jfif)
+}
+.CardContent p{
+    width: 350px;
+    overflow: inherit;
+    
+}
+@media (max-width: 768px) {
+    .Nav{
+        display: none;
+    }
+    .CardsContainer{
+        align-items: center;
+    }
+    .arrow {
+        display: block;
+        margin-right: 10px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .CenterText h2 {
+        font-size: 1.8rem;
+    }
+}
