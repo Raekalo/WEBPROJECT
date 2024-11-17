@@ -6,6 +6,9 @@ main{
     justify-content: center;
     align-items: center;
     background-color: #e0e8ed;
+    background-image: url(images/SignInImages/protest3.jpg);
+    background-size: cover;
+    font-size: 18px;
    
 }
 .container {
@@ -13,30 +16,13 @@ main{
     display: flex;
     width: 100vw;
     height: 100vh;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.left-panel {
-    flex: 1;
-    background-color: rgb(46, 76, 89,0.2);
-    background-image: url(images/SignInImages/FlagRaised.PNG);
-    background-size:cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-image 0.5s;
 }
 
-.left-panel .illustration img {
-    max-width: 80%;
-    height: auto;
-}
 
-/* Right Panel */
 .right-panel {
     flex: 1;
-    background-color:#8e9dab;
+    background-color:rgba(23, 23, 23, 0.75);
     position: relative;
     padding: 50px;
 }
@@ -46,7 +32,8 @@ main{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 250px;
+    max-width: 375px;
+    height: 390px;
     text-align: center;
     margin: auto;
     position: absolute;
@@ -102,27 +89,6 @@ main{
     text-decoration: underline;
 }
 @media screen and (max-width:768px) {
-    .left-panel{
-        background-position-y:0 ;
-        background-size: cover;
-        background-image: url(images/SignInImages/FlagRaisedWide.jfif);
-    }
-    #signup-form{
-        width: 100vw;
-    }
-    .container{
-        flex-direction: column;
-    }
-    .form-container form input {
-        margin: 2px 0;
-    }
-    .form-container p {
-        margin-top: 0px;
-    }
-    .form-container form button {
-        margin-top: 2px;
-    }
-    .form-container h3 {
-        margin-bottom: 0px;
-    }
+
+    
 }

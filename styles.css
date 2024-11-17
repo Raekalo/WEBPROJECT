@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: roboto;
+    font-size: 19px;
 }
 ::-webkit-scrollbar {
     width: 8px;
@@ -19,13 +21,15 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 header {
-    background: #fff;
+    background: rgb(225, 219, 219);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 main{
-background: rgb(219, 213, 213);
+background: rgb(237, 234, 234);
+overflow: hidden;
 }
 nav {
     display: flex;
@@ -33,16 +37,17 @@ nav {
     align-items: center;
 }
 #Logo {
-        height: 75px;
+        height: 90px;
         width: auto;
-        margin: 5px;
+        margin: 10px;
         box-shadow: 0 0 2px black;
-        cursor: pointer;
         border-radius: 50% ;
+        margin-right:15px ;
 }
 nav ul {
     list-style: none;
     display: flex;
+    margin-right: 35px;
 }
 
 nav ul li {
@@ -50,7 +55,10 @@ nav ul li {
 }
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #0d0d0d;
+}
+nav ul li a:hover{
+    text-decoration: underline;
 }
 .arrow {
     display: none;
@@ -60,6 +68,7 @@ nav ul li a {
     cursor: pointer;
     transform: rotate(180deg);
     transition: transform 0.3s;
+    
 }
 .btn {
     display: inline-block;
@@ -97,9 +106,9 @@ nav ul li a {
 }
 
 footer {
-    background: #333;
+    background: #494949;
     color: #fff;
-    padding: 20px 10%;
+    padding: 10px;
     font-family: Arial, sans-serif;
 }
 
@@ -116,7 +125,7 @@ footer {
 
 .footer-brand h2 {
     font-size: 1.5rem;
-    color: rgb(100, 2, 2);
+    color: rgb(251, 119, 119);
     margin-bottom: 10px;
 }
 
@@ -132,7 +141,7 @@ footer {
 .footer-team h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: rgb(193, 33, 33);
+    color: rgb(247, 106, 106);
 }
 
 .footer-team ul {
@@ -155,7 +164,7 @@ footer {
 .footer-links h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: rgb(193, 33, 33);
+    color: rgb(247, 106, 106);
 }
 
 .footer-links ul {
@@ -185,16 +194,20 @@ footer {
     border-top: 1px solid rgb(68, 68, 68);
     padding-top: 10px;
 }
-footer #Logo{
-    height: 90px;
+footer .footer-brand #Logo{
+    height: 110px;
 }
 @media (max-width: 768px) {
+    #Logo{
+        height: 100px;
+    }
     .Nav{
         display: none;
     }
     .arrow {
         display: block;
         margin-right: 10px;
+        font-size: 35px;
     }
 
     .footer-container {
