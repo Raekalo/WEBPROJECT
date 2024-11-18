@@ -54,6 +54,7 @@
     flex-direction: row-reverse;
     justify-content: space-around;
     flex-wrap: wrap;
+    
 }
 .card:nth-child(odd){
     flex-direction: row;
@@ -82,6 +83,24 @@
     overflow: inherit;
     
 }
+.testimonials {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 100px;
+}
+.testimonial {
+    position: absolute;
+    width: 100%;
+    font-size: 1.2rem;
+    transition: opacity 1s ease;
+    opacity: 0;
+}
+.testimonial.active {
+    opacity: 1;
+}
+
 footer #Logo{
     height: 105px;
 }

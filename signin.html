@@ -43,11 +43,11 @@
             <div class="right-panel">
                 <div class="form-container" id="login-form">
                     <h3>Already Members</h3>
-                    <form>
-                        <input type="text" placeholder="Enter your email" required>
-                        <input type="password" placeholder="Enter your password" required>
-                        <button type="submit">Sign In</button>
-                    </form>
+                    <div class="form">
+                        <input type="text" placeholder="Enter your email" id="SignInEmail" required>
+                        <input type="password" placeholder="Enter your password" id="SignInPassword" required>
+                        <button id="SignInButton">Sign In</button>
+                    </div>
                     <p>
                         Don't have an account yet? 
                         <a href="#" id="show-signup">Create an account</a>
@@ -55,12 +55,12 @@
                 </div>
                 <div class="form-container hidden" id="signup-form">
                     <h3>Create an Account</h3>
-                    <form>
-                        <input type="text" placeholder="Enter your name" required>
-                        <input type="email" placeholder="Enter your email" required>
-                        <input type="password" placeholder="Create a password" required>
-                        <button type="submit">Sign Up</button>
-                    </form>
+                    <div class="form">
+                        <input type="text" placeholder="Enter your name" id="Name" required>
+                        <input type="email" placeholder="Enter your email" id="SignUpEmail" required>
+                        <input type="password" id="SignUpPassword" placeholder="Create a password" required>
+                        <button id="SignUpButton">Sign Up</button>
+                    </div>
                     <p>
                         Already have an account? 
                         <a href="#" id="show-login">Sign in</a>

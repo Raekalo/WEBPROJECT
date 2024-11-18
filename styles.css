@@ -24,7 +24,7 @@ body {
     overflow-x: hidden;
 }
 header {
-    background: rgb(225, 219, 219);
+    background: rgb(184, 178, 178);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 main{
@@ -37,21 +37,34 @@ nav {
     align-items: center;
 }
 #Logo {
-        height: 90px;
+        height: 70px;
         width: auto;
-        margin: 10px;
         box-shadow: 0 0 2px black;
+        box-sizing: border-box;
         border-radius: 50% ;
-        margin-right:15px ;
+        margin-left:15px ;
+        padding: 2px;
 }
 nav ul {
     list-style: none;
     display: flex;
-    margin-right: 35px;
+    margin-right: 20px;
 }
 
 nav ul li {
-    margin: 0 10px;
+    padding: 0 10px;
+    height: 75px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+nav ul li:hover{
+    background-color: white;
+    text-decoration: underline;
+}
+nav ul li:active{
+    background-color: rgb(200, 210, 210);
 }
 nav ul li a {
     text-decoration: none;
@@ -92,6 +105,8 @@ nav ul li a:hover{
     background-color: #333;
     border-bottom: 3px solid #ccc;
     transition: padding 0.3s;
+    cursor: pointer;
+    
 }
 .SmallSizeNav li a{
     color: white;
@@ -103,6 +118,7 @@ nav ul li a:hover{
 .SmallSizeNav li:hover{
     padding: 4px;
     background-color: grey;
+    text-decoration: underline white;
 }
 
 footer {
@@ -199,7 +215,7 @@ footer .footer-brand #Logo{
 }
 @media (max-width: 768px) {
     #Logo{
-        height: 100px;
+        height: 90px;
     }
     .Nav{
         display: none;
