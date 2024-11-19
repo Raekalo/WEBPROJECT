@@ -10,7 +10,7 @@ $(document).ready(function () {
         setInterval(function () {
             currentIndex = (currentIndex + 1) % images.length;
             $('.center').css('background-image', `url('${images[currentIndex]}')`);
-        }, 5000); // Change image every 5 seconds
+        }, 5000);
     let text = "A social platform where you can say The TRUTH.";
     let index = 0;
 
@@ -33,5 +33,14 @@ $(document).ready(function () {
             testimonials.eq(index1).addClass('active');
         }, 3000);
 
+        let userName = localStorage.getItem('active');
         
+        if (localStorage.getItem("loggedIn")==1) {
+            $('#signup-btn').remove();
+            $('#join-btn').remove();
+            $('.CenterText').append('<span>Welcome, ' + userName + '!</span>');
+        } else {
+            $('#signup-btn').attr('href', 'signin.html');
+            $('#join-btn').attr('href', 'signin.html');
+        } 
 });

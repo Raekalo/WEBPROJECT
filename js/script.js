@@ -1,6 +1,32 @@
 $(document).ready(function(){
     let decider=0
-    let loggedin=0;
+    if (localStorage.getItem("loggedIn") === null) {
+        localStorage.setItem("loggedIn", "0");
+    }
+    function updateLinksBasedOnLogin() {
+        let links = {
+            Home: "index.html",
+            Feed: "feed.html",
+            Friends: "friends.html",
+            Donate: "donate.html",
+            Profile: "profile.html"
+        };
+    
+        setInterval(() => {
+            let loggedIn = localStorage.getItem("loggedIn");
+            $.each(links, function (id, href) {
+                linkElement = $("#" + id);
+                if (loggedIn==="0") {
+                   linkElement.attr("href", "signin.html");
+                    
+                } else {
+                    linkElement.attr("href", href);
+                }
+            });
+        }, 1000);
+    }
+        updateLinksBasedOnLogin();
+    
     $(".arrow").click(function(){
         if(decider==0){
             decider=1;
@@ -59,7 +85,7 @@ $(document).ready(function(){
                             user.push(newUser);
                             localStorage.setItem('user', JSON.stringify(user));
                             localStorage.setItem('active', name);
-                            loggedin=1;
+                            localStorage.setItem("loggedIn", "1");
                             window.location.assign('Feed.html');
     
                         } else {
@@ -82,7 +108,7 @@ $(document).ready(function(){
                         found = true;
                         if (users[i].password === password) {
                             localStorage.setItem('active', users[i].name);
-                            loggedin=1;
+                            localStorage.setItem("loggedIn", "1");
                             window.location.assign('Feed.html');
                         } else {
                             alert('Wrong Password');
