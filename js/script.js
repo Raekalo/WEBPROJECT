@@ -58,6 +58,7 @@ $(document).ready(function(){
             let name = $('#Name').val();
             let email = $('#SignUpEmail').val().trim();
             let password = $('#SignUpPassword').val();
+            let followers=0;
             let choice = 1;
             if (name === '' || email === '' || password === '') {
                 alert('You Are Missing Your Inputs');
@@ -80,7 +81,8 @@ $(document).ready(function(){
                             let newUser = {
                                 name: name,
                                 Email: email,
-                                password: password
+                                password: password,
+                                followers:followers
                             };
                             user.push(newUser);
                             localStorage.setItem('user', JSON.stringify(user));
