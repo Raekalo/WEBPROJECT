@@ -21,6 +21,7 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+    text-align: center;
 }
 
 .Card {
@@ -47,6 +48,15 @@
     height: 40px;
     object-fit: cover;
     border-radius: 50%;
+}
+#SignOut{
+    background-color:rgb(65, 64, 64);
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+#SignOut:hover{
+    background-color:rgb(53, 53, 53);
 }
 .Info{
     font-size:10px ;
@@ -304,7 +314,7 @@
 
 .AddPostSection button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: #8f1212;
     color: white;
     border: none;
     border-radius: 5px;
@@ -312,7 +322,7 @@
 }
 
 .AddPostSection button:hover {
-    background-color: #0056b3;
+    background-color: #4b0101;
 }
 #MyProfile{
     display: flex;
@@ -321,6 +331,7 @@
 #MyName{
 font-size: 17px;
 }
+
 @media screen and (max-width:768px) {
     .Trendingopener{
         display: block;

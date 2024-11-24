@@ -1,0 +1,27 @@
+[
+    {
+        "category": "Trending in Palestine",
+        "title": "#7October",
+        "details": "80k Tweets"
+    },
+    {
+        "category": "Trending Worldwide",
+        "title": "#HumanitarianRelief",
+        "details": "120k Tweets"
+    },
+    {
+        "category": "Trending in Culture",
+        "title": "#PalestinianCuisine",
+        "details": "45k Tweets"
+    },
+    {
+        "category": "Politics",
+        "title": "#FreePalestine",
+        "details": "65k Tweets"
+    },
+    {
+        "category": "Spotlight",
+        "title": "#VoicesOfGaza",
+        "details": "92k Tweets"
+    }
+]

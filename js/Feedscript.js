@@ -32,14 +32,14 @@ $(document).ready(function () {
     }
     let followers=user[i].followers
     $("#Follower-count").html('<p>Friends: '+followers+'</p>')
-    $(".AddButton").on('click',function(){
+    $("#Cards").on('click','.AddButton',function(){
         $(this).closest(".Card").hide(250);
         ++followers;
         user[i].followers=followers;
         localStorage.setItem("user", JSON.stringify(user));
         $("#Follower-count").html('<p>Friends: '+followers+'</p>')
     })
-    $(".Ignore").on('click',function(){
+    $("#Cards").on('click','.Ignore',function(){
         $(this).closest(".Card").hide(250);
         $("#Follower-count").html('<p>Friends: '+followers+'</p>')
     })
@@ -124,5 +124,99 @@ $(document).ready(function () {
             $(this).val('');
         }
     });
-    
+    fetch('js/Posts.json') 
+    .then(response => { 
+        if (!response.ok) { 
+            throw new Error('Network response was not ok'); 
+        } 
+        return response.json();
+    }) 
+    .then(data => { 
+        data.forEach(Post => { 
+            let $PostCard= $('<div>').addClass('post'); 
+            let $PostHeader = $('<div>')
+                .addClass('post-header')
+                .html(`
+                  <img src="${Post.Profile}" alt="Raed Kalo" class="profile-pic"> 
+                  <span class="name">${Post.Name}</span>
+                `
+                );
+            let $PostContent=$('<div>')
+            .addClass('post-content')
+            .html(`
+                <p>${Post.text}</p>
+                <img src="${Post.image}" alt="Image" class="post-image">
+                `);
+            let $postfooter=$('<div>')
+            .addClass('post-footer')
+            .html(`
+                <button class="like-btn">Like</button>
+                <span class="like-count">0 Likes</span>
+                <button class="comment-btn">Comment</button>
+                <span class="comment-count">0 Comments</span>
+                `);
+            let $comments=$('<div>')
+            .addClass('comments-section')
+            .html(`
+                <input type="text" placeholder="Add a comment..." class="comment-input">
+                <div class="comments-list"></div>
+                `);
+                $PostCard.append($PostHeader).append($PostContent).append($postfooter).append($comments);
+                $('#Posts').append($PostCard);
+
+        }); 
+    }) 
+    .catch(error => { 
+        console.error('Error fetching flight data:', error); 
+    });
+    fetch('js/Cards.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        data.forEach(Card => {
+            let Cardd = $('<div>')
+                .addClass('Card')
+                .html(`
+                    <img src="${Card.profile}" alt="Icon" class="profile-pic">
+                    <div class="Info">
+                        <p>${Card.Name}</p>
+                        <div>
+                            <button class="AddButton">Add Friend</button>
+                            <button class="Ignore">Ignore</button>
+                        </div>
+                    </div>
+                `);
+            $("#Cards").append(Cardd);
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching card data:', error);
+    });
+
+    fetch('js/Trends.json') 
+    .then(response => { 
+        if (!response.ok) { 
+            throw new Error('Network response was not ok'); 
+        } 
+        return response.json();
+    }) 
+    .then(data => { 
+        data.forEach(list => { 
+            let TrendList=$('<li>')
+            .html(`
+                <div class="trend-category">${list.category}</div>
+                <div class="trend-title">${list.title}</div>
+                <div class="trend-details">${list.details}</div>
+                `)
+            $('#trending-list').append(TrendList);
+        });  
+    }) 
+    .catch(error => { 
+        console.error('Error fetching trend data:', error); 
+    }); 
+
 })

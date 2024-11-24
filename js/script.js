@@ -125,4 +125,8 @@ $(document).ready(function(){
             }
         });
     }
+    $('#SignOut').on('click',function(){
+        localStorage.setItem("loggedIn", "0");
+        window.location.assign('index.html');
+    })
 })

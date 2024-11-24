@@ -36,45 +36,16 @@
     <main>
         <div class="content">
         <div class="mid-panel">
-            <div class="Cards">
+            <div class="Cards" id="Cards">
                 <div class="Card" id="MyProfile">
                     <img src="images/FeedImages/Palestine.jfif" alt="profile-pic" class="profile-pic">
                     <div class="Info">
                         <div id="MyName"></div>
                         <span id="Follower-count"> </span>
-                        <button>Sign-Out</button>
+                        <button id="SignOut">Sign-Out</button>
                     </div>
                 </div>
-                <div class="Card">
-                    <img src="images/FeedImages/Raed.jpeg" alt="Icon" class="profile-pic">
-                    <div class="Info">
-                    <p>Raed Kalo</p>
-                    <div>
-                    <button class="AddButton">Add Friend</button>
-                    <button class="Ignore">Ignore</button>
-                    </div>
-                    </div>
-                </div>
-                <div class="Card">
-                    <img src="images/FeedImages/Ragheed.PNG" alt="Icon" class="profile-pic">
-                    <div class="Info">
-                    <p>Ragheed Hashisho</p>
-                    <div>
-                    <button class="AddButton">Add Friend</button>
-                    <button class="Ignore">Ignore</button>
-                    </div>
-                    </div>
-                </div>
-                <div class="Card">
-                    <img src="images/FeedImages/Hussam.jpeg" alt="Icon" class="profile-pic">
-                    <div class="Info">
-                    <p>Houssam Hariri</p>
-                    <div>
-                    <button class="AddButton">Add Friend</button>
-                    <button class="Ignore">Ignore</button>
-                    </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="Posting">
                 <div class="AddPostSection">
@@ -83,102 +54,17 @@
                     <input type="file" id="imageInput" accept="image/*">
                     <button id="submitPostBtn">Post</button>
                 </div>
-            <div class="Posts">
-                <div class="post" id="post1">
-                    <div class="post-header">
-                        <img src="images/FeedImages/Raed.jpeg" alt="Raed Kalo" class="profile-pic">
-                        <span class="name">Raed Kalo</span>
-                    </div>
-                    <div class="post-content">
-                        <p>Everything started here, on the 7th of October #Tufan-Al-Aqsa</p>
-                        <img src="images/FeedImages/Tufan-Al-Aqsa.jpg" alt="Hike Image" class="post-image">
-                    </div>
-                    <div class="post-footer">
-                        <button class="like-btn">Like</button>
-                        <span class="like-count">0 Likes</span>
-                        <button class="comment-btn">Comment</button>
-                        <span class="comment-count">0 Comments</span>
-                    </div>
-                    <div class="comments-section">
-                        <input type="text" placeholder="Add a comment..." class="comment-input">
-                        <div class="comments-list"></div>
-                    </div>
-                </div>
-                <div class="post" id="post2">
-                    <div class="post-header">
-                        <img src="images/FeedImages/Ragheed.PNG" alt="Ragheed Hashisho" class="profile-pic">
-                        <span class="name">Ragheed Hashisho</span>
-                    </div>
-                    <div class="post-content">
-                        <p>In the light of what's been happening lately, a protest was organized by the citizens of Washington</p>
-                        <img src="images/FeedImages/ProtestWashington.jfif" alt="Cuisine Image" class="post-image">
-                    </div>
-                    <div class="post-footer">
-                        <button class="like-btn">Like</button>
-                        <span class="like-count">0 Likes</span>
-                        <button class="comment-btn">Comment</button>
-                        <span class="comment-count">0 Comments</span>
-                    </div>
-                    <div class="comments-section">
-                        <input type="text" placeholder="Add a comment..." class="comment-input">
-                        <div class="comments-list"></div>
-                    </div>
-                </div>
-                <div class="post" id="post3">
-                    <div class="post-header">
-                        <img src="images/FeedImages/Hussam.jpeg" alt="Houssam Hariri" class="profile-pic">
-                        <span class="name">Houssam Hariri</span>
-                    </div>
-                    <div class="post-content">
-                        <p>The will of freedom can surpass any border in the world </p>
-                        <img src="images/FeedImages/Gate.webp" alt="Sunset Image" class="post-image">
-                    </div>
-                    <div class="post-footer">
-                        <button class="like-btn">Like</button>
-                        <span class="like-count">0 Likes</span>
-                        <button class="comment-btn">Comment</button>
-                        <span class="comment-count">0 Comments</span>
-                    </div>
-                    <div class="comments-section">
-                        <input type="text" placeholder="Add a comment..." class="comment-input">
-                        <div class="comments-list"></div>
-                    </div>
-                </div>
+            <div class="Posts" id="Posts">
+                
             </div>
             </div>
         </div>
         <div class="right-panel">
             
             <div class="container">
-                <!-- Side Panel -->
                 <aside class="trending-panel">
                     <h2>Trends for You</h2>
-                    <ul class="trending-list">
-                        <li>
-                            <div class="trend-category">Trending in Palestine</div>
-                            <div class="trend-title">#7October</div>
-                            <div class="trend-details">80k Tweets</div>
-                        </li>
-                        <li>
-                            <div class="trend-category">Trending Worldwide</div>
-                            <div class="trend-title">#HumanitarianRelief</div>
-                            <div class="trend-details">120k Tweets</div>
-                        </li>
-                        <li>
-                            <div class="trend-category">Trending in Culture</div>
-                            <div class="trend-title">#PalestinianCuisine</div>
-                            <div class="trend-details">45k Tweets</div>
-                        </li>
-                        <li>
-                            <div class="trend-category">Politics</div>
-                            <div class="trend-title">#FreePalestine</div>
-                            <div class="trend-details">65k Tweets</div>
-                        </li>
-                        <li>
-                            <div class="trend-category">Spotlight</div>
-                            <div class="trend-title">#VoicesOfGaza</div>
-                            <div class="trend-details">92k Tweets</div>
-                        </li>
+                    <ul class="trending-list" id="trending-list">
                     </ul>
                 </aside>
             <div class="Trendingopener">
