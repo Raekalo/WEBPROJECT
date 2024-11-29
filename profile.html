@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="js/jquery-ui-1.14.1.custom/jquery-ui.min.css">
+    <script src="js/jquery-3.7.1.min.js" ></script>
+    <script src="js/jquery-ui-1.14.1.custom/jquery-ui.min.js" ></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/Feedscript.js" defer></script>
+    <script src="js/profile.js" defer></script>
+    <link rel="stylesheet" href="Feedstyles.css">    
+</head>
+<body>
+
+    <header>
+        <nav>
+            <img src="images/commonImages/Logo.png" alt="Logo" id="Logo">
+            <span class="arrow">⏏</span>
+            <ul class="Nav">
+                <li><a href="#" id="Home">Home</a></li>
+                <li><a href="#" id="Feed">Feed</a></li>
+                <li><a href="#" id="Friends">Friends</a></li>
+                <li><a href="#" id="Donate">Donate</a></li>
+                <li><a href="#" id="Profile">Profile</a></li>
+            </ul>
+        </nav>
+        <ul class="SmallSizeNav">
+            <li><a href="#" id="Home">Home</a></li>
+            <li><a href="#" id="Feed">Feed</a></li>
+            <li><a href="#" id="Friends">Friends</a></li>
+            <li><a href="#" id="Donate">Donate</a></li>
+            <li><a href="#" id="Profile">Profile</a></li>
+        </ul>
+    </header> 
+<main>
+    <div class="profile-container">
+        <div class="cover-photo">
+            <img src="images/FeedImages/Palestine.jfif" alt="Cover Photo">
+        </div>
+        <div class="profile-info">
+            <div class="profile-picture">
+                <img src="images/FeedImages/Palestine.jfif" alt="Profile Picture" id="current-profile-picture">
+            </div>
+            <div class="profile-details">
+                <h2 id="Name"></h2>
+                <p>@you</p>
+                <p>Web Developer | Music Lover | Traveler</p>
+                <button id="update-profile-picture-btn">Update Profile Picture</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts Section -->
+    <div class="Posts">
+        <!-- Post 1 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/FeedImages/Palestine.jfif" alt="Ragheed" class="profile-pic">
+                <span class="name" id="Name">You</span>
+            </div>
+            <div class="post-content">
+                <p>In the light of what's been happening lately, a protest was organized by the citizens of Washington.</p>
+                <img src="images/FeedImages/ProtestWashington.jfif" alt="Image" class="post-image">
+            </div>
+            <div class="post-footer">
+                <button class="like-btn">Like</button>
+                <span class="like-count">105 Likes</span>
+                <button class="comment-btn">Comment</button>
+                <span class="comment-count">0 Comments</span>
+            </div>
+            <div class="comments-section">
+                <input type="text" placeholder="Add a comment..." class="comment-input">
+                <div class="comments-list"></div>
+            </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/FeedImages/Palestine.jfif" alt="User" class="profile-pic">
+                <span class="name">You</span>
+            </div>
+            <div class="post-content">
+                <p>The ongoing war in Palestine has left countless families displaced. Let's raise awareness and support!</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-btn">Like</button>
+                <span class="like-count">95 Likes</span>
+                <button class="comment-btn">Comment</button>
+                <span class="comment-count">0 Comments</span>
+            </div>
+            <div class="comments-section">
+                <input type="text" placeholder="Add a comment..." class="comment-input">
+                <div class="comments-list"></div>
+            </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="post">
+            <div class="post-header">
+                <img src="images/FeedImages/Palestine.jfif" alt="User" class="profile-pic">
+                <span class="name">You</span>
+            </div>
+            <div class="post-content">
+                <p>Palestine needs your help. Donate and be the change you want to see in the world.</p>
+            </div>
+            <div class="post-footer">
+                <button class="like-btn">Like</button>
+                <span class="like-count">105 Likes</span>
+                <button class="comment-btn">Comment</button>
+                <span class="comment-count">0 Comments</span>
+            </div>
+            <div class="comments-section">
+                <input type="text" placeholder="Add a comment..." class="comment-input">
+                <div class="comments-list"></div>
+            </div>
+        </div>
+    </div>
+</main>
+    <footer >
+        <div class="footer-container">
+            <div class="footer-brand">
+                <img src="images/commonImages/Logo.png" alt="Logo" id="Logo">
+            </div>
+            <div class="footer-team">
+                <h3>Meet the Team</h3>
+                <ul>
+                    <li><strong>Raed Kalo</strong></li>
+                    <li><strong>Ragheed Hashisho</strong></li>
+                    <li><strong>Houssam Hariri</strong></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 The World's Word. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/profile.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
