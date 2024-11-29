@@ -52,7 +52,7 @@
     text-align: center;
     align-items: center;
     flex-direction: row-reverse;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     
 }
@@ -79,9 +79,13 @@
     background-image: url(images/HomeImages/OliveTree.jfif)
 }
 .CardContent p{
-    width: 350px;
+    width: 450px;
+    font-size: 23px;
     overflow: inherit;
     
+}
+.CardContent h2{
+    font-size: 30px;
 }
 .testimonials {
     width: 100%;
@@ -105,6 +109,9 @@ footer #Logo{
     height: 105px;
 }
 @media (max-width: 768px) {
+    .CardContent p{
+        width: 100%;
+    }
     .Nav{
         display: none;
     }

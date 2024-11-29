@@ -12,16 +12,19 @@
 .mid-panel{
     width: 100%;
     height: 100vh;
-    background-color: rgb(225, 225, 225);
+    background-color: #EAEAEA;
     display: flex;
     overflow-y: scroll;
 }  
 
 .Cards {
+    margin-top: 20px;
+    margin-left: 5px;
     display: flex;
     flex-direction: column;
     gap: 4px;
     text-align: center;
+    top: 20px;
 }
 
 .Card {
@@ -30,10 +33,10 @@
     min-width: 125px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    background-color: rgb(143, 164, 167);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -227,17 +230,19 @@
 
 .like-btn,
 .comment-btn {
-    background-color: #8f1212;
-    color: white;
+    background: #4792e3;
+    color: #fff;
     border: none;
+    
     border-radius: 5px;
     padding: 5px 10px;
+    transition: background 0.3s ease;
     cursor: pointer;
 }
 
 .like-btn:hover,
 .comment-btn:hover {
-    background-color:#4b0101;
+    background: #0056b3;
 }
 
 .comments-section {
@@ -314,15 +319,16 @@
 
 .AddPostSection button {
     padding: 10px;
-    background-color: #8f1212;
+    background: #4792e3;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.2s ease-in;
 }
 
 .AddPostSection button:hover {
-    background-color: #4b0101;
+    background: #0056b3;
 }
 #MyProfile{
     display: flex;
@@ -333,6 +339,13 @@ font-size: 17px;
 }
 
 @media screen and (max-width:768px) {
+    .like-count, .comment-count{
+        font-size: 15px;
+    }
+    .like-btn,
+.comment-btn{
+    font-size: 10px;
+}
     .Trendingopener{
         display: block;
     }
@@ -341,7 +354,7 @@ font-size: 17px;
         width: 100vw;
 
      }
-
+     
     .content{
         flex-direction: column-reverse;
         
@@ -358,5 +371,16 @@ font-size: 17px;
     }
     .mid-panel{
         padding-top: 5px;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .Cards{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .Card{
+        width: 30vw;
     }
 }

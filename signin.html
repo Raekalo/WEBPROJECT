@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>SignIn/SignUp</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="signinstyles.css">
+    <link rel="icon" href="images/commonImages/Logo.png" type="image/png">
     <link rel="stylesheet" href="js/jquery-ui-1.14.1.custom/jquery-ui.min.css">
     <script src="js/jquery-3.7.1.min.js" defer></script>
     <script src="js/jquery-ui-1.14.1.custom/jquery-ui.min.js" defer></script>
@@ -14,34 +16,37 @@
 </head>
 <body>
     <header>
+        <a class="logo" href="index.html"><img src="images/commonImages/Logo.png" style="height: 70px; width: auto;" alt="logo"></a>
         <nav>
-            
-            <img src="images/commonImages/Logo.png" alt="Logo" id="Logo">
-
-            <span class="arrow">⏏</span>
-            <ul class="Nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Feed</a></li>
-                <li><a href="#">Friends</a></li>
-                <li><a href="#">Donate</a></li>
-                <li><a href="#">Profile</a></li>
+            <ul class="nav__links">
+                <li><a href="index.html" id="Home-Desktop">Home</a></li>
+                <li><a href="#" id="Feed-Desktop">Feed</a></li>
+                <li><a href="#" id="Friends-Desktop">Friends</a></li>
+                <li><a href="#" id="Donate-Desktop">Donate</a></li>
+                <li><a href="#" id="Profile-Desktop">Profile</a></li>
             </ul>
         </nav>
-        <ul class="SmallSizeNav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Feed</a></li>
-            <li><a href="#">Friends</a></li>
-            <li><a href="#">Donate</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-    </header> 
+        <a class="cta" href="#">Contact</a>
+        <p class="menu cta">Menu</p>
+    </header>
+    <div class="overlay">
+        <a class="close">&times;</a>
+        <div class="overlay__content">
+            <a href="index.html" id="Home-Mobile">Home</a>
+            <a href="#" id="Feed-Mobile">Feed</a>
+            <a href="#" id="Friends-Mobile">Friends</a>
+            <a href="#" id="Donate-Mobile">Donate</a>
+            <a href="#" id="Profile-Mobile">Profile</a>
+        </div>
+    </div>
     <main>
         <div class="container">
             <div class="left-panel">
             </div>
     
             <div class="right-panel">
-                <div class="form-container" id="login-form">
+                <div class="form-container"  id="login-form">
+                    <a href="index.html" style="color: black;width: 100%; text-align: left;"><i class="fas fa-arrow-left"></i> Back</a>
                     <h3>Already Members</h3>
                     <div class="form">
                         <input type="text" placeholder="Enter your email" id="SignInEmail" required>
@@ -54,6 +59,7 @@
                     </p>
                 </div>
                 <div class="form-container hidden" id="signup-form">
+                    <a href="index.html" style="color: black;width: 100%; text-align: left;"><i class="fas fa-arrow-left"></i> Back</a>
                     <h3>Create an Account</h3>
                     <div class="form">
                         <input type="text" placeholder="Enter your name" id="Name" required>
@@ -69,31 +75,49 @@
             </div>
         </div>
     </main>
-    <footer >
+    <footer>
         <div class="footer-container">
-            <div class="footer-brand">
-                <img src="images/commonImages/Logo.png" alt="Logo" id="Logo">
-            </div>
-            <div class="footer-team">
-                <h3>Meet the Team</h3>
+            <div class="footer-section">
+                <h3>About Us</h3>
                 <ul>
-                    <li><strong>Raed Kalo</strong></li>
-                    <li><strong>Ragheed Hashisho</strong></li>
-                    <li><strong>Houssam Hariri</strong></li>
+                    <li><a href="#Goal">Website's Goal</a></li>
+                    <li><a href="#Info">The Cause</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
-                <h3>Quick Links</h3>
+            <div class="footer-section">
+                <h3>Help & Support</h3>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="policy.html">Community Guidelines</a></li>
+                    <li><a href="policy.html">Privacy Policy</a></li>
+                    <li><a href="policy.html">Terms of Service</a></li>
                 </ul>
             </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Download Our App</h3>
+                <ul>
+                    <li><a href="#">App Store</a></li>
+                    <li><a href="#">Google Play</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Stay Updated</h3>
+                <form id="newsletter-form">
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 The World's Word. All Rights Reserved.</p>
-        </div>
+        <p style="color: #ccc; border-top: 1px solid #444; padding-top: 10px;">Copyright © 2024 The World's Word. All Rights Reserved.</p>
     </footer>
 </body>
 </html>

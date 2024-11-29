@@ -1,0 +1,41 @@
+
+
+main {
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+}
+
+.policy-section {
+    margin-bottom: 20px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    background-color: #efefef;
+}
+
+.toggle-button {
+    margin: 0;
+    padding: 15px 20px;
+    background-color: #0073e6;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+
+.toggle-button:hover {
+    background-color: #005bb5;
+}
+
+.policy-content {
+    padding: 0 20px; 
+    max-height: 0; /* Collapsed state */
+    overflow: hidden; /* Prevents content overflow */
+    transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition */
+    border-top: 1px solid #ddd;
+}
+
+.policy-content.open {
+    max-height: 500px; /* A large enough value to fit the content */
+    padding: 15px 20px; /* Adds padding when open */
+}

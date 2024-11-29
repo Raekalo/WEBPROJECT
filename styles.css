@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 19px;
 }
 ::-webkit-scrollbar {
@@ -19,69 +21,183 @@
     background-color: transparent;
 }
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 header {
-    background: rgb(184, 178, 178);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-main{
-background: rgb(237, 234, 234);
-overflow: hidden;
-}
-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-#Logo {
-        height: 70px;
-        width: auto;
-        box-shadow: 0 0 2px black;
-        box-sizing: border-box;
-        border-radius: 50% ;
-        margin-left:15px ;
-        padding: 2px;
-}
-nav ul {
+    padding: 15px 10%;
+    background-color: #24252a;
+  }
+  
+  .logo {
+    cursor: pointer;
+  }
+  
+  .nav__links a,
+  .cta,
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  .nav__links {
     list-style: none;
     display: flex;
-    margin-right: 20px;
+  }
+  
+  .nav__links li {
+    padding: 0px 20px;
+  }
+  
+  .nav__links li a {
+    transition: color 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: rgba(168, 77, 77, 0.8);
+  }
+  
+  .cta {
+    padding: 9px 25px;
+    background-color: rgb(155, 12, 12);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+  }
+  
+  .cta:hover {
+    background-color: rgb(100, 2, 2,0.8);
+  }
+  
+  /* Mobile Nav */
+  
+  .menu {
+    display: none;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #24252a;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+  }
+  
+  .overlay--active {
+    width: 100%;
+  }
+  
+  .overlay__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: color 0.3s ease 0s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: rgba(168, 77, 77, 0.8);
+  }
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+    }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    .nav__links,
+    .cta {
+      display: none;
+    }
+    .menu {
+      display: initial;
+    }
+  }
+  
+/* Styles for the small bar */
+.user-bar {
+    display: flex;
+    text-align: left; /* Use flexbox for alignment */
+    justify-content: space-between; /* Adjust alignment */
+    align-items: center; /* Vertically align items */
+    background: linear-gradient(to right, #2c3e50, #35494d);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    
+}
+.dropdown {
+    display: inline-block;
+    position: relative;
 }
 
-nav ul li {
-    padding: 0 10px;
-    height: 75px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-nav ul li:hover{
-    background-color: white;
-    text-decoration: underline;
-}
-nav ul li:active{
-    background-color: rgb(200, 210, 210);
-}
-nav ul li a {
-    text-decoration: none;
-    color: #0d0d0d;
-}
-nav ul li a:hover{
-    text-decoration: underline;
-}
-.arrow {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
+.dropbtn {
+    background-color: transparent;
+    color: white;
     border: none;
+    font-size: 16px;
     cursor: pointer;
-    transform: rotate(180deg);
-    transition: transform 0.3s;
-    
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #555;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #777;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 .btn {
     display: inline-block;
@@ -122,99 +238,108 @@ nav ul li a:hover{
 }
 
 footer {
-    background: #494949;
-    color: #fff;
-    padding: 10px;
-    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: rgb(192, 94, 94);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center;
-    gap: 20px;
-}
-.footer-brand {
-    flex: 1 1 30%;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
 }
 
-.footer-brand h2 {
-    font-size: 1.5rem;
-    color: rgb(251, 119, 119);
-    margin-bottom: 10px;
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    opacity: 0; /* Start with hidden */
+    transform: translateY(20px); /* Start with a slight downward position */
+    animation: fadeInUp 0.5s forwards; /* Animation for fade in and upward movement */
+    animation-delay: 0.2s; /* Delay for staggered effect */
 }
 
-.footer-brand p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: rgb(221, 221, 221);
-}
-.footer-team {
-    flex: 1 1 30%;
+.footer-section:nth-child(1) { animation-delay: 0.2s; }
+.footer-section:nth-child(2) { animation-delay: 0.4s; }
+.footer-section:nth-child(3) { animation-delay: 0.6s; }
+.footer-section:nth-child(4) { animation-delay: 0.8s; }
+.footer-section:nth-child(5) { animation-delay: 1.0s; }
+.footer-section:nth-child(6) { animation-delay: 1.2s; }
+
+.footer-section h3 {
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
 }
 
-.footer-team h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: rgb(247, 106, 106);
-}
-
-.footer-team ul {
-    list-style: none;
+.footer-section ul {
+    list-style-type: none;
     padding: 0;
 }
 
-.footer-team li {
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+.footer-section ul li {
+    margin: 5px 0;
+    transition: color 0.3s; /* Transition for color change */
 }
 
-.footer-team strong {
-    color: rgb(255, 255, 255);
-}
-.footer-links {
-    flex: 1 1 30%;
-}
-
-.footer-links h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: rgb(247, 106, 106);
-}
-
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-links li {
-    margin-bottom: 8px;
-}
-
-.footer-links a {
+.footer-section a {
+    color: #c1c1c1;
     text-decoration: none;
-    color: rgb(221, 221, 221);
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
-    color: rgb(255, 255, 255);
+.footer-section a:hover {
+    color: #ebebeb;
 }
 
-.footer-bottom {
-    text-align: center;
-    font-size: 0.8rem;
-    color: rgb(187, 187, 187);
-    border-top: 1px solid rgb(68, 68, 68);
-    padding-top: 10px;
+#newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 10px;
 }
-footer .footer-brand #Logo{
-    height: 110px;
+
+#newsletter-form input {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
 }
-@media (max-width: 768px) {
+
+#newsletter-form button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ba4646;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#newsletter-form button:hover {
+    background-color: #742a2a;
+}
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media screen and (max-width: 768px) {
+    
+    nav{
+        justify-content: space-between;
+    }
     #Logo{
+        margin-left: 20px;
         height: 90px;
     }
     .Nav{
@@ -226,13 +351,4 @@ footer .footer-brand #Logo{
         font-size: 35px;
     }
 
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-brand, .footer-team, .footer-links {
-        flex: 1 1 100%;
-    }
 }

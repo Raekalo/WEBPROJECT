@@ -32,8 +32,8 @@ main{
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 375px;
-    height: 390px;
+    max-width: 370px;
+    height: 420px;
     text-align: center;
     margin: auto;
     position: absolute;
@@ -85,7 +85,9 @@ main{
 .form-container p a:hover {
     text-decoration: underline;
 }
-@media screen and (max-width:768px) {
-
+@media screen and (max-width:550px) {
+    .form-container{
+        max-width: 300px;
+    }
     
 }

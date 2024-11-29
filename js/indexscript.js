@@ -22,9 +22,16 @@ $(document).ready(function () {
         }
     }
     typeWriter();
-   
+        $("#donate-button").click(function(){
+            if(localStorage.getItem("loggedIn")==1){
+                window.location.assign("donate.html");
+            }
+            else{
+                window.location.assign("signin.html")
+            }
+        })
         let index1 = 0; 
-        const testimonials = $('.testimonial');
+        let testimonials = $('.testimonial');
         testimonials.eq(index1).addClass('active');
     
         setInterval(function () {

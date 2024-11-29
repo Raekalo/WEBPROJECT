@@ -3,13 +3,15 @@ $(document).ready(function () {
     let username = localStorage.getItem('active');
     $("#trendclick").on("click", function () {
         if (!isPanelOpen) {
-            $(".trending-panel").css("display", "block");
-            $(".right-panel").css("height", "52vh");
+            $(".trending-panel").stop().slideDown(400); // Open with slide-down animation
+            $(".right-panel").animate({ height: "52vh" }, 400); // Smoothly change height
+            $(this).css("transform", "rotate(180deg)");
         } else {
-            $(".trending-panel").css("display", "none");
-            $(".right-panel").css("height", "7vh");
+            $(".trending-panel").stop().slideUp(400); // Close with slide-up animation
+            $(".right-panel").animate({ height: "7vh" }, 400); // Smoothly change height back
+            $(this).css("transform", "rotate(0deg)"); // Reset icon flip
         }
-        isPanelOpen = !isPanelOpen; 
+        isPanelOpen = !isPanelOpen;
     });
     $(window).on("resize", function(){
         if (window.innerWidth >= 768) {
@@ -92,11 +94,11 @@ $(document).ready(function () {
     
         if ($btn.text() === 'Like') {
             $btn.text('Liked');
-            $btn.css('background-color', '#643a25');
+            $btn.css('background-color', '#146bc8');
             likes++;
         } else {
             $btn.text('Like');
-            $btn.css('background-color', '#c91212');
+            $btn.css('background-color', '#4792e3');
             likes--;
         }
         

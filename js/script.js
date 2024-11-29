@@ -3,52 +3,62 @@ $(document).ready(function(){
     if (localStorage.getItem("loggedIn") === null) {
         localStorage.setItem("loggedIn", "0");
     }
+    let menuOpen = $(".menu");  // Select the menu button
+    let menuClose = $(".close");  // Select the close button
+    let overlay = $(".overlay");  // Select the overlay
+
+    // Debugging: Ensure elements are selected
+    console.log(menuOpen, menuClose, overlay);
+
+    // Event listener for opening the overlay
+    menuOpen.on("click", function () {
+        console.log("Menu opened"); // Debugging
+        overlay.addClass("overlay--active");
+    });
+
+    // Event listener for closing the overlay
+    menuClose.on("click", function () {
+        console.log("Menu closed"); // Debugging
+        overlay.removeClass("overlay--active");
+    });
+
+    // Function to update navigation links based on login status
     function updateLinksBasedOnLogin() {
         let links = {
             Home: "index.html",
             Feed: "feed.html",
             Friends: "friends.html",
             Donate: "donate.html",
-            Profile: "profile.html"
+            Profile: "profile.html",
         };
-    
-        setInterval(() => {
+
+        setInterval(function () {
             let loggedIn = localStorage.getItem("loggedIn");
-            $.each(links, function (id, href) {
-                linkElement = $("#" + id);
-                if (loggedIn==="0") {
-                   linkElement.attr("href", "signin.html");
-                    
-                } else {
-                    linkElement.attr("href", href);
-                }
+            $.each(links, function (id, link) {
+                let desktopLink = $(`#${id}-Desktop`);
+                let mobileLink = $(`#${id}-Mobile`);
+                let href = loggedIn === "0" ? "signin.html" : link;
+
+                desktopLink.attr("href", href);
+                mobileLink.attr("href", href);
             });
         }, 1000);
     }
-        updateLinksBasedOnLogin();
-    
-    $(".arrow").click(function(){
-        if(decider==0){
-            decider=1;
-            $(".SmallSizeNav").css("display","block");
-            $(".arrow").css("transform","rotate(360deg)")
-            
-        }
-        else{
-            decider=0;
-             $(".SmallSizeNav").css("display","none");
-             $(".arrow").css("transform","rotate(180deg)")
-        }
-    })
-    function HideSmallNav(){
-        if($(".arrow").css("display")=="none")
-            $(".SmallSizeNav").css("display","none");
-    }
-    setInterval(HideSmallNav,100);
 
+    updateLinksBasedOnLogin();
+    
+    $('.Nav li').hover(
+        function () {
+            $(this).find('a').css('text-decoration', 'underline'); 
+        },
+        function () {
+            $(this).find('a').css('text-decoration', 'none');
+        }
+    );
     $('li').click(function () {
-        const link = $(this).find('a').attr('href');
+        let link = $(this).find('a').attr('href');
         if (link) {
+            console.log(link)
             window.location.href = link;
         }
     });
@@ -125,8 +135,34 @@ $(document).ready(function(){
             }
         });
     }
+    function updateUserBar() {
+        let loggedIn = localStorage.getItem("loggedIn");
+        let userBar = $('#userBar');
+        let username = $('#username');
+        let signoutLink = $('#signout');
+
+        if (loggedIn === "1") {
+            // Show user bar and display the logged-in user's name
+            let activeUser = localStorage.getItem("active");
+            username.text(`Welcome, ${activeUser}`);
+            userBar.show(1000); // Make the bar visible
+
+            // Add event listener for signout action
+            signoutLink.on('click', function () {
+                localStorage.setItem("loggedIn", "0"); // Update login status
+                window.location.href = "signin.html"; // Redirect to the sign-in page
+            });
+        } else {
+            // Hide the user bar if not logged in
+            userBar.hide(1000);
+        }
+    }
+
+    // Call the function to check login status on page load
+    updateUserBar();
     $('#SignOut').on('click',function(){
         localStorage.setItem("loggedIn", "0");
         window.location.assign('index.html');
     })
+    
 })
