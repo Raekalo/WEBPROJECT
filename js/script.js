@@ -3,26 +3,19 @@ $(document).ready(function(){
     if (localStorage.getItem("loggedIn") === null) {
         localStorage.setItem("loggedIn", "0");
     }
-    let menuOpen = $(".menu");  // Select the menu button
-    let menuClose = $(".close");  // Select the close button
-    let overlay = $(".overlay");  // Select the overlay
-
-    // Debugging: Ensure elements are selected
+    let menuOpen = $(".menu"); 
+    let menuClose = $(".close"); 
+    let overlay = $(".overlay");  
     console.log(menuOpen, menuClose, overlay);
-
-    // Event listener for opening the overlay
     menuOpen.on("click", function () {
-        console.log("Menu opened"); // Debugging
+        console.log("Menu opened"); 
         overlay.addClass("overlay--active");
     });
-
-    // Event listener for closing the overlay
     menuClose.on("click", function () {
-        console.log("Menu closed"); // Debugging
+        console.log("Menu closed"); 
         overlay.removeClass("overlay--active");
     });
 
-    // Function to update navigation links based on login status
     function updateLinksBasedOnLogin() {
         let links = {
             Home: "index.html",
@@ -135,6 +128,7 @@ $(document).ready(function(){
             }
         });
     }
+    
     function updateUserBar() {
         let loggedIn = localStorage.getItem("loggedIn");
         let userBar = $('#userBar');
@@ -142,23 +136,17 @@ $(document).ready(function(){
         let signoutLink = $('#signout');
 
         if (loggedIn === "1") {
-            // Show user bar and display the logged-in user's name
             let activeUser = localStorage.getItem("active");
             username.text(`Welcome, ${activeUser}`);
-            userBar.show(1000); // Make the bar visible
-
-            // Add event listener for signout action
+            userBar.show(1000);
             signoutLink.on('click', function () {
-                localStorage.setItem("loggedIn", "0"); // Update login status
-                window.location.href = "signin.html"; // Redirect to the sign-in page
+                localStorage.setItem("loggedIn", "0");
+                window.location.href = "signin.html";
             });
         } else {
-            // Hide the user bar if not logged in
             userBar.hide(1000);
         }
     }
-
-    // Call the function to check login status on page load
     updateUserBar();
     $('#SignOut').on('click',function(){
         localStorage.setItem("loggedIn", "0");

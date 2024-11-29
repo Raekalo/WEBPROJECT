@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let Name= localStorage.getItem('active');
     document.getElementById('Name').innerHTML=Name;
 
-    // Handle View Profile Picture
     profilePicture.addEventListener("click", () => {
         let modal = document.createElement("div");
         modal.style.position = "fixed";
@@ -32,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         modal.appendChild(modalImage);
 
         modal.addEventListener("click", () => {
-            modal.remove(); // Close the modal on click
+            modal.remove(); 
         });
 
         document.body.appendChild(modal); 
@@ -48,10 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (file) {
                 let reader = new FileReader();
                 reader.onload = (event) => {
-                    // Update the main profile picture
                     profilePicture.src = event.target.result;
-    
-                    // Update all instances of profile pictures
                     let profilePictures = document.querySelectorAll(".profile-pic");
                     profilePictures.forEach((img) => {
                         img.src = event.target.result;

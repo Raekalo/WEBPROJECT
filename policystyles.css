@@ -29,13 +29,13 @@ main {
 
 .policy-content {
     padding: 0 20px; 
-    max-height: 0; /* Collapsed state */
-    overflow: hidden; /* Prevents content overflow */
-    transition: max-height 0.5s ease, padding 0.5s ease; /* Smooth transition */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.5s ease;
     border-top: 1px solid #ddd;
 }
 
 .policy-content.open {
-    max-height: 500px; /* A large enough value to fit the content */
-    padding: 15px 20px; /* Adds padding when open */
+    max-height: 500px;
+    padding: 15px 20px;
 }

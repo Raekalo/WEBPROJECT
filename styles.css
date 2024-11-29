@@ -48,10 +48,11 @@ header {
   .nav__links {
     list-style: none;
     display: flex;
+
   }
   
   .nav__links li {
-    padding: 0px 20px;
+    padding: 0px 15px;
   }
   
   .nav__links li a {
@@ -63,7 +64,7 @@ header {
   }
   
   .cta {
-    padding: 9px 25px;
+    padding: 5px 20px;
     background-color: rgb(155, 12, 12);
     border: none;
     border-radius: 50px;
@@ -75,8 +76,6 @@ header {
     background-color: rgb(100, 2, 2,0.8);
   }
   
-  /* Mobile Nav */
-  
   .menu {
     display: none;
   }
@@ -87,7 +86,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000;
+    z-index: 1500;
     background-color: #24252a;
     overflow-x: hidden;
     transition: width 0.5s ease 0s;
@@ -124,33 +123,13 @@ header {
     color: #edf0f1;
   }
   
-  @media screen and (max-height: 450px) {
-    .overlay a {
-      font-size: 20px;
-    }
-    .overlay .close {
-      font-size: 40px;
-      top: 15px;
-      right: 35px;
-    }
-  }
   
-  @media only screen and (max-width: 800px) {
-    .nav__links,
-    .cta {
-      display: none;
-    }
-    .menu {
-      display: initial;
-    }
-  }
-  
-/* Styles for the small bar */
+
 .user-bar {
     display: flex;
-    text-align: left; /* Use flexbox for alignment */
-    justify-content: space-between; /* Adjust alignment */
-    align-items: center; /* Vertically align items */
+    text-align: left; 
+    justify-content: space-between;
+    align-items: center; 
     background: linear-gradient(to right, #2c3e50, #35494d);
     color: white;
     padding: 10px;
@@ -161,6 +140,7 @@ header {
 .dropdown {
     display: inline-block;
     position: relative;
+    z-index: 1400;
 }
 
 .dropbtn {
@@ -176,6 +156,7 @@ header {
     position: absolute;
     right: 0;
     background-color: #555;
+
     min-width: 160px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -257,10 +238,10 @@ footer {
     flex: 1;
     min-width: 200px;
     margin: 10px;
-    opacity: 0; /* Start with hidden */
-    transform: translateY(20px); /* Start with a slight downward position */
-    animation: fadeInUp 0.5s forwards; /* Animation for fade in and upward movement */
-    animation-delay: 0.2s; /* Delay for staggered effect */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+    animation-delay: 0.2s;
 }
 
 .footer-section:nth-child(1) { animation-delay: 0.2s; }
@@ -282,7 +263,7 @@ footer {
 
 .footer-section ul li {
     margin: 5px 0;
-    transition: color 0.3s; /* Transition for color change */
+    transition: color 0.3s;
 }
 
 .footer-section a {
@@ -299,6 +280,8 @@ footer {
     flex-direction: column;
     gap: 5px;
     justify-content: center;
+    text-align: center;
+    align-items: center;
     margin-top: 10px;
 }
 
@@ -309,6 +292,8 @@ footer {
 }
 
 #newsletter-form button {
+  width: 50%;
+
     padding: 8px 12px;
     border: none;
     border-radius: 4px;
@@ -333,22 +318,23 @@ footer {
         transform: translateY(0);
     }
 }
-@media screen and (max-width: 768px) {
-    
-    nav{
-        justify-content: space-between;
-    }
-    #Logo{
-        margin-left: 20px;
-        height: 90px;
-    }
-    .Nav{
-        display: none;
-    }
-    .arrow {
-        display: block;
-        margin-right: 10px;
-        font-size: 35px;
-    }
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
 
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
 }

@@ -5,7 +5,7 @@ const donationGoal = 10000;
 document.getElementById('donation-form').addEventListener('submit', function (event) {
     event.preventDefault(); 
    
-    const donationAmount = parseFloat(document.getElementById('donation-amount').value);
+    let donationAmount = parseFloat(document.getElementById('donation-amount').value);
 
     if (!donationAmount || donationAmount <= 0) {
         alert('Please enter a valid donation amount.');

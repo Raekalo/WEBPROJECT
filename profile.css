@@ -44,7 +44,6 @@ main{
     color: #777;
 }
 
-/* New Post Section */
 .new-post {
     background-color: #fff;
     margin: 20px auto;
@@ -77,7 +76,6 @@ main{
     background-color: #165eab;
 }
 
-/* Posts Section */
 .Posts {
     width: 80%;
     margin: 20px auto;
